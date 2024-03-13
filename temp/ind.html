@@ -1,0 +1,41 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today In History</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Today In History</h1>
+    </header>
+
+    <main>
+        <form method="POST" action="/">
+            <input type="text" id="day_input" name="day_input" required>
+            <button type="submit">Search</button>
+        </form>
+
+        {% if selected_day %}
+        <section>
+            <h2>NEWS ON {{ selected_day }}</h2>
+            <ul>
+                {% for entry in data %}
+                <li>
+                    {% for item in entry.data %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@google-cloud/language": "^6.2.0",
+    "@react-three/fiber": "^8.15.19",
+    "@tensorflow/tfjs": "^4.17.0",
+    "framer-motion": "^11.0.8",
+    "natural": "^6.11.1",
+    "sentiment": "^5.0.2",
+    "three": "^0.162.0"
+  }
+}
